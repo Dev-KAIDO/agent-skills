@@ -386,6 +386,11 @@ Local artifacts
 
 ---
 
+## Deep References (مرجعات vercel-labs المدمجة)
+- `references/ucp/` — **UCP (Unified Commerce Protocol)** for agentic commerce: catalog, cart, checkout, and order flows between AI agents and storefronts. Use when building commerce capabilities into agents (from `vercel-labs/agentic-commerce-skills`).
+
+---
+
 ## Verification Checklist (قائمة التحقق)
 
 - [ ] API credentials configured (env vars, not hardcoded)

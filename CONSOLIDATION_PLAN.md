@@ -1,10 +1,30 @@
 ﻿# خطة تجميع المهارات — المكتبة المكتملة
 
-> **الإصدار:** 3.1
+> **الإصدار:** 3.2
 > **التاريخ:** 2026-11-03
-> **المصدر:** 178 مهارة محلية + 116 مهارة من المستودع = **297 مهارة**
+> **المصدر:** 178 مهارة محلية + 116 مهارة من المستودع = **297 مهارة** + **13 مهارة من vercel-labs**
 > **النتيجة:** **19 مهارة شاملة** في `C:\Users\LENOVO\.kaido-skills\skills\`
-> **الحالة:** ✅ **مكتملة ومُدققة** — جميع الفجوات أُصلحت + تدقيق كامل (الإصدار 3.1)
+> **الحالة:** ✅ **مكتملة ومُدققة** — جميع الفجوات أُصلحت + تدقيق كامل (3.1) + دمج vercel-labs (3.2)
+
+---
+
+## 📦 دمج مهارات vercel-labs (الإصدار 3.2 — 2026-11-03)
+
+دراسة حساب `github.com/vercel-labs` كاملًا (100 مستودع) → 6 مستودعات تحتوي **13 مهارة** → دُمجت **بدون أي مجال جديد** داخل المجالات الـ19:
+
+| المهارة الواردة | المستودع | أُدمجت في |
+|---|---|---|
+| `deploy-to-vercel` · `vercel-cli-with-tokens` · `vercel-optimize` | agent-skills | `deployment-comprehensive/references/vercel/` |
+| `react-best-practices` · `composition-patterns` · `react-view-transitions` · `cra-to-next-migration` | agent-skills + migration-skills | `code-engineering/references/` |
+| `react-native-skills` | agent-skills | `mobile-development/references/react-native-skills/` |
+| `web-interface-guidelines` · `geist-learning-lab` | agent-skills + skill-geist-learning-labs | `design-web/references/` |
+| `writing-guidelines` | agent-skills + writing-guidelines (MIT) | `documentation-comprehensive/references/` |
+| `create-remotion-geist` | skill-remotion-geist | `multimedia-content/references/create-remotion-geist/` |
+| `ucp` (agentic commerce) | agentic-commerce-skills | `integrations/references/ucp/` |
+
+- الإسناد الكامل + ملاحظات الترخيص: **`CREDITS.md`**
+- المحتوى كله في `references/` — المؤشرات أُضيفت في SKILL.md الخاص بكل مجال
+- فحص بعد الدمج: frontmatter 19/19 + روابط مفقودة 0 + بدون SKILL.md متداخل
 
 ---
 

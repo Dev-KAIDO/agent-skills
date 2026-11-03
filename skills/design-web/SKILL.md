@@ -504,6 +504,16 @@ bash scripts/bundle-artifact.sh            # produce bundle.html (40+ shadcn com
 
 ---
 
+## Deep References (مرجعات vercel-labs المدمجة)
+Load on demand:
+
+| Reference | When to use |
+|-----------|-------------|
+| `references/web-interface-guidelines.md` (+ `-agents.md`) | Reviewing UI code for the Web Interface Guidelines: accessibility, semantics, forms, performance — output as `file:line` findings |
+| `references/geist-learning-lab/` | Building explorative learning experiences (tutorials, interactive lessons, sandboxes, quizzes) as Next.js apps with the Geist design system |
+
+---
+
 ## 17. Verification Checklist (قائمة التحقق)
 
 Before delivering any web design:

@@ -548,7 +548,7 @@ eas observe:metrics           # detailed metrics query
 ---
 
 ## Bundled References (المراجع المرفقة)
-72 reference docs in `references/` — consult before deep work:
+114 reference docs in `references/` — consult before deep work:
 
 | Topic | Files |
 |-------|-------|
@@ -559,6 +559,7 @@ eas observe:metrics           # detailed metrics query
 | Upgrades | `expo-av-to-audio.md`, `expo-av-to-video.md`, `react-navigation-to-expo-router.md` |
 | Modules & config | `native-module.md`, `create-expo-module.md`, `config-plugin.md`, `module-config.md`, `lifecycle.md`, `setup.md` |
 | Data & routes | `queries.md`, `expo-router-loaders.md` |
+| React Native (vercel-labs) | `react-native-skills/` — RN performance, lists, navigation, native patterns & testing (41 rule files) |
 
 ---
 

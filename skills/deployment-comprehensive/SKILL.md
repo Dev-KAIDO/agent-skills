@@ -90,6 +90,12 @@ vercel env pull .env.local  # Pull to local
 - Analytics and speed insights
 - Custom domains with automatic SSL
 
+### 2.4 Deep References (مرجع Vercel العميق — من vercel-labs)
+Load on demand when the task goes beyond the basics above:
+- `references/vercel/deploy-to-vercel.md` — full deployment workflows, previews, rollbacks, domains
+- `references/vercel/vercel-cli-with-tokens.md` — token-based CLI auth for CI and non-interactive environments
+- `references/vercel/vercel-optimize/` — cost & performance optimization: metrics collection, usage analysis, code scanning (150+ check files)
+
 ---
 
 ## 3. Netlify (نتل-افي)

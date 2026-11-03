@@ -426,6 +426,11 @@ python scripts/build_docs_sync_plan.py   # → docs_sync_plan.md
 
 ---
 
+## Deep References (مرجعات vercel-labs المدمجة)
+- `references/writing-guidelines.md` (+ `writing-guidelines-agents.md`) — Writing Guidelines compliance review: voice, tone, terminology, clarity, inclusive language. Use when asked to "review my docs", "check writing style", or "audit prose". Output findings as `file:line` with the rule cited.
+
+---
+
 ## Verification Checklist (قائمة التحقق)
 
 ### For all documents:

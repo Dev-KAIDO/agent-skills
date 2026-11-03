@@ -366,6 +366,13 @@ unit (pure logic) → component (Testing Library) → integration (API contract)
 ```
 Reference: `references/frontend-architecture-guide.md` (framework + testing/quality doc links).
 
+### 8.4 React / Next.js Deep References (مرجعات React العميقة — من vercel-labs)
+Load on demand when writing, reviewing, or migrating React/Next.js code:
+- `references/react-best-practices/` — Vercel Engineering performance rules (70+ rules: async, effects, bundle, caching, DOM)
+- `references/composition-patterns/` — compound components, children over render props, explicit variants, React 19 patterns
+- `references/react-view-transitions/` — `<ViewTransition>`, `addTransitionType`, CSS view-transition pseudo-elements
+- `references/cra-to-next-migration/` — full CRA → Next.js migration playbook (140+ rules: routing, data, SEO, gotchas)
+
 ---
 
 ## 9. Project Operations Ledger (سجل عمليات المشروع)

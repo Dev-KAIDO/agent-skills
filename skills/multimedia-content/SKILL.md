@@ -463,6 +463,11 @@ Pet/atlas QA gate: `validate_atlas.py` + `qa/review.json` must pass before packa
 
 ---
 
+## Deep References (مرجعات vercel-labs المدمجة)
+- `references/create-remotion-geist/` — programmatic video with **Remotion** in the Geist design aesthetic (dark theme, spring animations, Geist typography). Use when asked to create videos, animations, or motion graphics that follow Vercel's visual style. See `references/create-remotion-geist/index.md`.
+
+---
+
 ## Verification Checklist (قائمة التحقق)
 
 ### For all media:
