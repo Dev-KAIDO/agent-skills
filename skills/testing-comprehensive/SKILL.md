@@ -399,6 +399,7 @@ python scripts/with_server.py \
 ```
 - **Always:** `wait_for_load_state('networkidle')` before inspecting; re-snapshot after navigation; close the browser
 - Examples in `examples/`: `element_discovery.py`, `static_html_automation.py`, `console_logging.py`
+- **Deps for the Python examples:** `pip install playwright && playwright install chromium`
 
 ### 10.3 GUI Suite Routing (سطح المكتب)
 ```

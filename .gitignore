@@ -25,6 +25,9 @@ desktop.ini
 *.tmp
 .cache/
 
+# Skill runtime artifacts
+.codex-project-intel/
+
 # Local secrets — never commit credentials
 .env
 .env.*

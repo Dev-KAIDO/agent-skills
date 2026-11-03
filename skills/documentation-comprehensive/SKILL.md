@@ -172,7 +172,7 @@ pdf.output("arabic.pdf")
 ### 3.3 PDF Extraction (استخراج المحتوى)
 When you must READ an existing PDF (tables, text, forms) rather than create one:
 ```bash
-pip install pdfplumber pypdf
+pip install pdfplumber pypdf pdf2image   # pdf2image needed by scripts/render_docx.py
 # Poppler for rendering (pdftoppm) — install: apt/poppler-utils or Windows bundle
 ```
 ```python

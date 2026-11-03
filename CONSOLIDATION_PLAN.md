@@ -1,10 +1,40 @@
 ﻿# خطة تجميع المهارات — المكتبة المكتملة
 
-> **الإصدار:** 3.0
-> **التاريخ:** 2026-10-27
+> **الإصدار:** 3.1
+> **التاريخ:** 2026-11-03
 > **المصدر:** 178 مهارة محلية + 116 مهارة من المستودع = **297 مهارة**
 > **النتيجة:** **19 مهارة شاملة** في `C:\Users\LENOVO\.kaido-skills\skills\`
-> **الحالة:** ✅ **مكتملة ومُدققة** — جميع الفجوات أُصلحت
+> **الحالة:** ✅ **مكتملة ومُدققة** — جميع الفجوات أُصلحت + تدقيق كامل (الإصدار 3.1)
+
+---
+
+## 🔎 تدقيق شامل (الإصدار 3.1 — 2026-11-03)
+
+فحوصات آلية على المكتبة كاملة + اختبارات تشغيل فعلية:
+
+| الفحص | النتيجة |
+|---|---|
+| frontmatter صالح (name + description) | ✅ 19/19 |
+| صلاحية ترميز UTF-8 لكل الملفات النصية | ✅ 100% |
+| صياغة Python (46 ملف) | ✅ 46/46 |
+| صياغة JavaScript (12 ملف) | ✅ 12/12 |
+| الروابط الداخلية في SKILL.md | ✅ **126/126 بعد الإصلاح** (كانت 40 مفقودة) |
+| تشغيل السكربتات (`--help`) | ✅ **43/47** — المتبقية4 تحتاج `playwright`/`pdf2image` (موثقة الآن في SKILL.md) |
+| اختبارات تشغيل فعلية (بوابة الأمان، تخطيط الاختبارات، التشخيص، الماركداون) | ✅ 4/4 نتائج صحيحة |
+| أسرار / مسارات جهاز في الملفات المستعادة | ✅ 0 |
+
+### الإصلاحات التي أُنجزت في 3.1
+1. **استعادة المكتبات المشتركة المفقودة** من الأصول (سلة المحذوفات):
+   - `skills/_skill-governance/python_lib/` → `project_intel.py` + `skill_governance.py`
+   - `skills/sdlc-system/python_lib/sdlc_common.py` → أُعيد بناؤها بالكامل (7 دوال: `load_artifact`, `write_artifact`, `list_from_payload`, `flatten_text`, `keyword_set`, `parse_simple_yaml`, `execute_configured_script`)
+   - النتيجة: **7 سكربتات كانت ترمي `ModuleNotFoundError` أصبحت تعمل**
+2. **استعادة 40 ملفًا مرجعيًا/سكربت مذكورًا في SKILL.md لكنه مفقود** (كلها من المهارات الأصلية):
+   - `code-engineering`: 27 مرجعًا + `references/coding_standards/` + 9 سكربتات
+   - `design-web`: `scripts/init-artifact.sh`, `scripts/bundle-artifact.sh`
+   - `documentation-comprehensive`: `scripts/build_docs_sync_plan.py`
+   - `cityofaiagents-operations`: `scripts/run_cityofaiagents_visual_gui_verification_ops.py`
+3. **توثيق التبعيات:** `pdf2image` في documentation-comprehensive و`playwright` في testing-comprehensive.
+4. **مزامنة مع GitHub:** سحب 4 commits (إعادة تصميم README + assets) — الآن محلي = `origin/main`.
 
 ---
 
