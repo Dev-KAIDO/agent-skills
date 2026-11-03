@@ -1,6 +1,6 @@
 ---
 name: database-comprehensive
-description: Complete database skill — schema design, PostgreSQL tuning, performance auditing, indexing, connection pooling, Supabase, Valkey/Redis caching, migrations, testing, and data integrity. Use for ANY database design, optimization, or management task.
+description: Complete database skill — schema design, PostgreSQL tuning, performance auditing, indexing, connection pooling, Supabase, Valkey/Redis caching, migrations, testing, data integrity, and data science (pandas, notebooks, statistics, feature engineering, classical ML, visualization). Use for ANY database, data analysis, or modeling task.
 ---
 
 # Database Comprehensive — Complete Skill
@@ -435,6 +435,35 @@ def db_session(db_engine):
 3. VERIFY    → check consistency
 4. CONTRACT  → switch reads to new column, then drop old
 ```
+
+---
+
+## 8. Data Science (علم البيانات)
+
+Analysis, statistics, and classical ML on top of the data layer. Companion to sections 1–7 (storage/tuning) — this section is about **insight and modeling**.
+
+### 8.1 Workflow
+```
+question → load+clean → EDA (distributions!) → features (leakage-checked)
+  → model (pipeline, correct split) → evaluate (business metric) → ship+monitor
+```
+
+### 8.2 Non-Negotiable Rules
+- Fit preprocessing **inside** the pipeline on train only — leakage beats every tuning trick
+- Time series → walk-forward splits; groups → GroupKFold; never random shuffle
+- Imbalanced → PR-AUC + class weights, not accuracy; threshold tuned on validation
+- Merge with `validate=` — silent row explosion corrupts every downstream number
+- Report effect size + CI, not just p-values; correct for multiple comparisons
+- Median/IQR for skewed data; mean/std only when the distribution earns it
+
+### 8.3 Deep References (مرجعات Data Science)
+Load on demand from `references/data-science/` (see its `index.md`):
+- `pandas.md` — loading, cleaning, joins, groupby, performance
+- `notebooks.md` — reproducible Jupyter workflow, review checklist
+- `stats.md` — distributions, hypothesis tests, CIs, A/B sanity
+- `feature-engineering.md` — encoding, scaling, temporal lags, leakage traps
+- `ml-basics.md` — sklearn pipelines, splits, metrics, imbalanced data
+- `visualization.md` — chart selection, design rules, library choice
 
 ---
 

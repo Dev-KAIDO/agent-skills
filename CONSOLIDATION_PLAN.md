@@ -1,10 +1,29 @@
 ﻿# خطة تجميع المهارات — المكتبة المكتملة
 
-> **الإصدار:** 3.2
+> **الإصدار:** 3.3
 > **التاريخ:** 2026-11-03
 > **المصدر:** 178 مهارة محلية + 116 مهارة من المستودع = **297 مهارة** + **13 مهارة من vercel-labs**
 > **النتيجة:** **19 مهارة شاملة** في `C:\Users\LENOVO\.kaido-skills\skills\`
-> **الحالة:** ✅ **مكتملة ومُدققة** — جميع الفجوات أُصلحت + تدقيق كامل (3.1) + دمج vercel-labs (3.2)
+> **الحالة:** ✅ **مكتملة ومُدققة** — الفجوات أُصلحت (3.1) + دمج vercel-labs (3.2) + تغطية الفجوات + CI (3.3)
+
+---
+
+## 🧪 الاختبارات الآلية + CI (الإصدار 3.3 — 2026-11-03)
+
+- `tools/validate_skills.py` — 10 فحوصات، stdlib فقط (frontmatter، روابط ميتة، SKILL.md متداخل، صياغة Python/shell/JS، UTF-8، ملفات build متعقّدة، فحص أسرار، صحة JSON)
+- `.github/workflows/validate.yml` — يشتغل على كل push و PR (ubuntu, Python 3.12, Node 20)
+- **النتيجة:** PASS محليًا + **GitHub Actions: success** من أول تشغيل
+- ملاحظة: رفع ملفات workflow يتطلب نطاق `workflow` في رمز GitHub (`gh auth refresh -s workflow`)
+
+## 🕳️ تغطية الفجوات (الإصدار 3.3 — بدون أي مجال جديد)
+
+| الفجوة | أُدمجت في | المحتوى |
+|---|---|---|
+| **AI Engineering** | `backend-comprehensive` — قسم 13 | `references/ai-engineering/` (6 ملفات): llm-apis · prompt-engineering · rag · vector-stores · agents · evals |
+| **Data Science** | `database-comprehensive` — قسم 8 | `references/data-science/` (7 ملفات): pandas · notebooks · stats · feature-engineering · ml-basics · visualization · index |
+
+- أوصاف frontmatter حدُّثت ليشمل المجالين (الاكتشاف الصحيح للمهارة)
+- المجالات تبقى **19** — نفس أسلوب الدمج: مؤشرات مختصرة في SKILL.md + محتوى عميق في `references/`
 
 ---
 

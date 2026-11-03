@@ -1,6 +1,6 @@
 ---
 name: backend-comprehensive
-description: Complete backend skill — system design, API design (REST/GraphQL/gRPC), database architecture, caching, message queues, authentication, logging, real-time, microservices, ASP.NET, Node.js, and Python backends. Use for ANY server-side development or architecture work.
+description: Complete backend skill — system design, API design (REST/GraphQL/gRPC), database architecture, caching, message queues, authentication, logging, real-time, microservices, ASP.NET, Node.js, Python backends, and AI engineering (LLM APIs, prompts, RAG, agents, evals). Use for ANY server-side development, architecture, or LLM feature work.
 ---
 
 # Backend Comprehensive — Complete Skill
@@ -791,6 +791,37 @@ const server = new Server(
   }
 }
 ```
+
+---
+
+## 13. AI Engineering (هندسة الذكاء الاصطناعي)
+
+Building LLM features into backends: chat, RAG, agents, evals. **Start with the simplest shape that works** — most "AI features" are a single structured-output call, not an agent.
+
+### 13.1 Shape Selection
+| Need | Use |
+|------|-----|
+| One known operation (extract, classify, summarize) | single LLM call + JSON Schema |
+| Answers from your documents | RAG pipeline |
+| Fixed multi-step process | deterministic workflow in code |
+| Path unknown, tools involved | agent loop (bounded, budgeted) |
+| Quality measurement | golden set + regression gate in CI |
+
+### 13.2 Non-Negotiable Rules
+- Validate model output (schema) before use; never regex-parse JSON from prose
+- Bound every agent loop: max iterations, token/dollar ceiling, timeout
+- Untrusted content (web, files, tickets) = data, never instructions (injection defense)
+- Cache the static prefix (system + tools) — ~90% input cost cut
+- Log every call: model, tokens, latency, cost, trace_id → feeds evals
+- Never ship a prompt change without a passing golden set
+
+### 13.3 Deep References (مرجعات AI Engineering)
+Load on demand from `references/ai-engineering/` (see its `index.md`):
+- `llm-apis.md` — streaming, tool use, structured output, retries, cost math
+- `prompt-engineering.md` — system prompt structure, few-shot, caching, hardening
+- `rag.md` + `vector-stores.md` — chunking, hybrid search, rerank, pgvector/Qdrant tuning
+- `agents.md` — loops, tool design, guardrails, human-in-the-loop
+- `evals.md` — golden sets, LLM-as-judge, CI regression gates
 
 ---
 
