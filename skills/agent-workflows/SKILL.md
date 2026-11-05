@@ -474,3 +474,13 @@ brainstorming → writing-plans → dispatching-parallel-agents
   → (each subagent) test-driven-development → verification
   → integrate → verification-before-completion
 ```
+
+---
+
+## Related Skills
+
+- `$project-management` — for turning plans into tracked sprints and delivery
+- `$testing-comprehensive` — for TDD and test automation in practice
+- `$repair-stability` — for systematic debugging of regressions
+- `$code-engineering` — for code review etiquette and refactoring discipline
+- `$sdlc-system` — for the full SDLC these workflows sit inside

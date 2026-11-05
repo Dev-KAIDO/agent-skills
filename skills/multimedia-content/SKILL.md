@@ -444,6 +444,40 @@ window.addEventListener('keyup', e => keys[e.key] = false);
 
 ---
 
+## 11. Image Generation (توليد الصور)
+
+Generate still images for any use: heroes, illustrations, social assets, sprites, storyboards.
+
+### 11.1 Prompt Structure
+```
+[subject]  who/what, concrete and specific
+[style]    medium + reference ("editorial illustration", "3D render, soft studio light")
+[compose]  framing, viewpoint, layout, negative space for text
+[palette]  colors that match the brand/design tokens
+[constraints] aspect ratio, what must NOT appear
+```
+- One clear focus per image; competing concepts produce mush.
+- Specify **negative space** when text/UI will be overlaid later.
+- Style words are cumulative — reuse the same phrase set across a set for consistency.
+
+### 11.2 Consistency Across a Set
+- Reuse the exact style + palette block verbatim; change only the subject line.
+- Keep aspect ratio and camera language identical; vary subject/pose only.
+- For characters/brands: generate a reference image first, then reference it in subsequent prompts.
+
+### 11.3 Iteration Protocol
+1. Generate 4 candidates at low cost; pick a direction, don't polish the first output.
+2. Refine with targeted edits ("same, but wider framing") — never rewrite the whole prompt.
+3. Check at 100%: artifacts in hands/text/backgrounds, correct crop for the target slot.
+4. Final: correct dimensions for placement (2× for retina), compressed (WebP/AVIF), `alt` text written.
+
+### 11.4 Rules
+- ❌ Never put generated images with real people's likenesses or trademarked characters into production
+- ✅ Prefer vector/canvas for logos, icons, diagrams — generation is for photographic/illustrative art
+- ✅ Keep the winning prompt in the repo (`prompts/`) so the set can be regenerated
+
+---
+
 ## Bundled Tools (الأدوات المرفقة)
 
 Deterministic scripts shipped with this skill — prefer them over ad-hoc code:
@@ -459,7 +493,7 @@ Deterministic scripts shipped with this skill — prefer them over ad-hoc code:
 | Jupyter scaffold | `scripts/new_notebook.py` | `references/notebook-structure.md`, `experiment-patterns.md` |
 | Web game test client | `scripts/web_game_playwright_client.js` | `references/action_payloads.json` |
 
-Pet/atlas QA gate: `validate_atlas.py` + `qa/review.json` must pass before packaging as `pet.json`. Delegate visual generation to `$imagegen`.
+Pet/atlas QA gate: `validate_atlas.py` + `qa/review.json` must pass before packaging as `pet.json`. Visual generation follows section 11 (Image Generation).
 
 ---
 

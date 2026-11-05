@@ -429,3 +429,13 @@ P2 (Log):   Error rate > 0.1% for 1 hour
 - [ ] Change impacts analyzed before modifications
 - [ ] Monitoring configured for new features
 - [ ] Post-release verification completed
+
+---
+
+## Related Skills
+
+- `$agent-workflows` — for the working methodology behind planning and verification
+- `$repair-stability` — for defect remediation and incident recovery
+- `$code-engineering` — for sizing and sequencing technical work
+- `$documentation-comprehensive` — for meeting notes, specs, and announcements
+- `$devops-comprehensive` — for release governance in CI/CD

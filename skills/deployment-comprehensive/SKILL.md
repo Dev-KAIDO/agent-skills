@@ -569,3 +569,13 @@ nslookup example.com
 - [ ] Analytics tracking working
 - [ ] Backup automation running
 - [ ] Rollback tested and functional
+
+---
+
+## Related Skills
+
+- `$devops-comprehensive` — for CI/CD pipelines and incident response
+- `$security-comprehensive` — for secrets, TLS, and hardening before ship
+- `$testing-comprehensive` — for smoke/e2e verification of each release
+- `$repair-stability` — for remediation when a rollout goes wrong
+- `$backend-comprehensive` — for health checks and graceful shutdown

@@ -565,4 +565,4 @@ Before delivering any web design:
 - `$design-mobile` — for mobile app design
 - `$design-desktop` — for desktop application design
 - `$security-comprehensive` — for security review of web apps
-- `$testing-web` — for testing web applications
+- `$testing-comprehensive` — for testing web applications

@@ -431,5 +431,5 @@ Research-backed spec produced **before** implementation. Ground every choice in 
 - `$design-web` — for web interface design
 - `$design-mobile` — for mobile app design
 - `$design-figma` — for Figma design work
-- `$testing-desktop` — for testing desktop applications
+- `$testing-comprehensive` — for testing desktop applications
 - `$code-engineering` — for code quality and architecture

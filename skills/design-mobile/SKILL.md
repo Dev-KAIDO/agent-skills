@@ -380,5 +380,4 @@ export const View = styled(NativeView);
 - `$design-desktop` — for desktop application design
 - `$design-figma` — for Figma design work
 - `$mobile-development` — for Expo/React Native development
-- `$testing-web` — for testing mobile web
-- `$testing-desktop` — for testing desktop apps
+- `$testing-comprehensive` — for testing mobile and desktop apps

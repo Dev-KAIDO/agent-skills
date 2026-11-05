@@ -610,7 +610,7 @@ Emit a gate artifact with status, findings, and evidence — never gate silently
 ## Related Skills
 
 - `$design-web` / `$design-mobile` / `$design-desktop` — for UI design
-- `$testing-web` / `$testing-desktop` — for security testing
+- `$testing-comprehensive` — for security testing
 - `$backend-comprehensive` — for API security implementation
 - `$repair-stability` — for fixing security vulnerabilities
 - `$code-engineering` — for code review with security focus

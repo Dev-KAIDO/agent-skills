@@ -565,7 +565,7 @@ def make_jobs(
             "input_images": reference_inputs,
             "output_path": "decoded/base.png",
             "depends_on": [],
-            "generation_skill": "$imagegen",
+            "generation_skill": "$multimedia-content",
             "requires_grounded_generation": bool(reference_inputs),
             "allow_prompt_only_generation": not reference_inputs,
         }
@@ -590,7 +590,7 @@ def make_jobs(
                 "may_derive_from": "running-right",
                 "derivation": "framewise-horizontal-mirror-preserving-order",
                 "requires_explicit_approval": True,
-                "fallback_generation_skill": "$imagegen",
+                "fallback_generation_skill": "$multimedia-content",
             }
         elif state not in NON_DERIVABLE_STATES:
             derivation_policy["reason"] = "no deterministic derivation is configured for this state"
@@ -615,7 +615,7 @@ def make_jobs(
                 ],
                 "output_path": f"decoded/{state}.png",
                 "depends_on": depends_on,
-                "generation_skill": "$imagegen",
+                "generation_skill": "$multimedia-content",
                 "requires_grounded_generation": True,
                 "allow_prompt_only_generation": False,
                 "identity_reference_paths": identity_reference_paths,
@@ -782,7 +782,7 @@ def main() -> None:
         "brand_brief": args.brand_brief,
         "brand_sources": args.brand_source,
         "pet_safe_style": PET_SAFE_STYLE,
-        "primary_generation_skill": "$imagegen",
+        "primary_generation_skill": "$multimedia-content",
     }
     if brand_discovery_path:
         request["brand_discovery_path"] = brand_discovery_path
@@ -805,7 +805,7 @@ def main() -> None:
         "schema_version": 1,
         "created_at": datetime.now(timezone.utc).isoformat(),
         "run_dir": str(run_dir),
-        "primary_generation_skill": "$imagegen",
+        "primary_generation_skill": "$multimedia-content",
         "jobs": make_jobs(run_dir, copied_refs),
     }
     (run_dir / "imagegen-jobs.json").write_text(

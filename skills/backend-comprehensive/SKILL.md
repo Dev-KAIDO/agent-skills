@@ -844,3 +844,14 @@ Load on demand from `references/ai-engineering/` (see its `index.md`):
 - [ ] Error handling covers all failure cases
 - [ ] Graceful degradation (fallbacks)
 - [ ] Graceful shutdown (drain connections)
+
+---
+
+## Related Skills
+
+- `$database-comprehensive` — for the data layer behind the APIs
+- `$deployment-comprehensive` — for shipping and releasing the service
+- `$security-comprehensive` — for auth, API security, and secrets
+- `$testing-comprehensive` — for API/contract test automation
+- `$integrations` — for connecting third-party services
+- `$devops-comprehensive` — for infrastructure and observability
