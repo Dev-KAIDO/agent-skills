@@ -1,6 +1,6 @@
 ---
 name: design-web
-description: Web design skill covering complete UI/UX for web — layout, typography, color, components, animation, accessibility, responsive design, modern design systems, landing pages, dashboards, forms, navigation, and professional aesthetics. Use when building, reviewing, or redesigning any web interface.
+description: Web design skill covering complete UI/UX for web — layout, typography, color, components, animation, accessibility, responsive design, modern design systems, landing pages, dashboards, forms, navigation, professional aesthetics, SEO (crawlability, metadata, structured data, Core Web Vitals), and web analytics (event taxonomy, conversions, consent). Use when building, reviewing, or redesigning any web interface.
 ---
 
 # Web Design — Complete Skill
@@ -514,7 +514,32 @@ Load on demand:
 
 ---
 
-## 17. Verification Checklist (قائمة التحقق)
+## 17. SEO & Web Analytics (تحسين البحث والتحليلات)
+
+Discoverability and measurement — design decisions that ship with the interface.
+
+### 17.1 SEO Essentials
+- **Crawl first:** robots.txt + sitemap agree; server-render meaningful HTML; one canonical URL per page
+- Unique `title` (≤60) + `meta description` (≤160) + one `h1`; descriptive image `alt` + fixed `width/height`
+- Structured data (JSON-LD) matching real page content → rich results
+- Core Web Vitals (field data): LCP ≤2.5s · INP ≤200ms · CLS ≤0.1
+- Internal links: important pages ≤3 clicks from home; 404s → 301
+
+### 17.2 Analytics Essentials
+- Fixed event taxonomy `object_action` + bounded properties — never ad-hoc event names
+- Track the funnel (`started → completed`), not just success
+- One shared tracking module, guard against double-fire; SPA = fire `page_view` per route change
+- Privacy floor: cookieless where possible, anonymize IPs, **no PII in properties**, consent-gated
+- One source of truth for the conversion definition, reviewed quarterly
+
+### 17.3 Deep References
+Load on demand from `references/seo-analytics/` (see its `index.md`):
+- `seo.md` — crawlability, metadata, structured data, CWV, hreflang, release checklist
+- `analytics.md` — event taxonomy, tool choice, implementation, failure modes
+
+---
+
+## 18. Verification Checklist (قائمة التحقق)
 
 Before delivering any web design:
 

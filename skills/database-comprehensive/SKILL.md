@@ -1,6 +1,6 @@
 ---
 name: database-comprehensive
-description: Complete database skill — schema design, PostgreSQL tuning, performance auditing, indexing, connection pooling, Supabase, Valkey/Redis caching, migrations, testing, data integrity, and data science (pandas, notebooks, statistics, feature engineering, classical ML, visualization). Use for ANY database, data analysis, or modeling task.
+description: Complete database skill — schema design, PostgreSQL tuning, performance auditing, indexing, connection pooling, Supabase, Valkey/Redis caching, migrations, testing, data integrity, data science (pandas, notebooks, statistics, feature engineering, classical ML, visualization), and data engineering (ETL/ELT, orchestration, streaming/CDC, data quality). Use for ANY database, data pipeline, data analysis, or modeling task.
 ---
 
 # Database Comprehensive — Complete Skill
@@ -464,6 +464,25 @@ Load on demand from `references/data-science/` (see its `index.md`):
 - `feature-engineering.md` — encoding, scaling, temporal lags, leakage traps
 - `ml-basics.md` — sklearn pipelines, splits, metrics, imbalanced data
 - `visualization.md` — chart selection, design rules, library choice
+
+---
+
+## 9. Data Engineering (هندسة البيانات)
+
+Pipelines and reliability for data at scale — companion to sections 1–7 (storage) and 8 (analysis).
+
+### 9.1 Core Rules
+- **Land raw first** (immutable, replayable) → silver (cleaned) → gold (aggregates); never re-extract to fix a transform
+- Tasks idempotent with natural keys + upserts — every load must be safely re-runnable
+- Batch by default; streaming only with a proven <1min freshness requirement
+- Watermarks for late data (event time ≠ processing time); overlap incremental windows
+- Every data incident ends with a **new test** in CI
+
+### 9.2 Deep References (مرجعات هندسة البيانات)
+Load on demand from `references/data-engineering/` (see its `index.md`):
+- `etl.md` — ETL vs ELT, orchestration (Airflow/Dagster/dbt), DAG rules, incremental loads
+- `streaming.md` — Kafka model, keying, schemas, consumer lag, CDC/outbox
+- `data-quality.md` — contracts, four checks, anomaly detection, lineage, recovery order
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: devops-comprehensive
-description: Complete DevOps skill — infrastructure automation, CI/CD pipelines, CI failure analysis, GitHub CLI workflows, incident response, release management, system diagnostics, observability, and governance. Use for ANY DevOps, CI/CD, or operational task.
+description: Complete DevOps skill — infrastructure automation, CI/CD pipelines, CI failure analysis, GitHub CLI workflows, incident response, release management, system diagnostics, observability, governance, and networking/Linux fundamentals (DNS, TLS, firewalls, systemd, logs, resources). Use for ANY DevOps, CI/CD, infrastructure, or operational task.
 ---
 
 # DevOps Comprehensive — Complete Skill
@@ -366,6 +366,34 @@ CMD ["dist/server.js"]
 - ✅ External providers (Buildkite, CircleCI) → report the check URL only, out of scope for fixes
 - ✅ Auth-scope precheck (`gh auth status`) before any gh operation
 - ✅ System diagnostics are **read-only** — never mutate state while investigating
+
+---
+
+## 11. Networking & Linux Fundamentals (الشبكات ولينكس)
+
+Infrastructure fundamentals for diagnosing "the server/site is down" class incidents.
+
+### 11.1 Diagnosis Ladder (always top-down)
+```
+1. DNS resolves?    dig / nslookup
+2. TCP reachable?   nc -zv host port
+3. TLS OK?          openssl s_client (expiry, chain!)
+4. HTTP responds?   curl -sv (status, headers, timing)
+5. App logic?       journalctl -u app -f + trace id
+```
+80% of outages stop at steps 1–3 (expired cert, wrong DNS, closed security group).
+
+### 11.2 Non-Negotiable Rules
+- Databases (5432/3306/6379) **never** public — private network or bastion only
+- Service runs as non-root with `Restart=always`; secrets via `EnvironmentFile` mode 600
+- Cert expiry alerted at 30 days; SSH: key auth only, `PasswordAuthentication no`
+- Watch `df` (disk-full crashes) and OOM (`dmesg | grep -i oom`) before anything exotic
+- Chain timeouts LB > app > downstream; health checks must test readiness, not process-alive
+
+### 11.3 Deep References (مرجعات الشبكات ولينكس)
+Load on demand from `references/networking-linux/` (see its `index.md`):
+- `networking.md` — DNS, TLS, ports/firewalls, HTTP debugging, load balancers
+- `linux.md` — systemd, journalctl, resource diagnostics, permissions, ssh, safe ops
 
 ---
 
