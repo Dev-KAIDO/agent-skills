@@ -23,11 +23,21 @@
 
 <div align="center">
 
-<a href="#خريطة-المكتبة">🗺️ خريطة المجالات</a> ·
-<a href="#التثبيت">⚙️ التثبيت</a> ·
-<a href="#الاستدعاء-الأساسي">▶️ الاستدعاء</a> ·
-<a href="#وصفة-تنفيذ-كيف-تندمج-المهارات">🔗 الدمج</a> ·
-<a href="#المساهمة-بمهارة-جديدة">✍️ المساهمة</a>
+<table>
+<tr>
+<td align="center"><a href="#خريطة-المكتبة"><img src="https://img.shields.io/badge/01-Map-2563eb?style=for-the-badge" alt="01 Map"><br><strong>🗺️ الخريطة</strong></a></td>
+<td align="center">➜</td>
+<td align="center"><a href="#التثبيت"><img src="https://img.shields.io/badge/02-Install-0f766e?style=for-the-badge" alt="02 Install"><br><strong>⚙️ التثبيت</strong></a></td>
+<td align="center">➜</td>
+<td align="center"><a href="#الاستدعاء-الأساسي"><img src="https://img.shields.io/badge/03-Invoke-7c3aed?style=for-the-badge" alt="03 Invoke"><br><strong>▶️ الاستدعاء</strong></a></td>
+<td align="center">➜</td>
+<td align="center"><a href="#وصفة-تنفيذ-كيف-تندمج-المهارات"><img src="https://img.shields.io/badge/04-Compose-d97706?style=for-the-badge" alt="04 Compose"><br><strong>🔗 الدمج</strong></a></td>
+<td align="center">➜</td>
+<td align="center"><a href="#المساهمة-بمهارة-جديدة"><img src="https://img.shields.io/badge/05-Extend-16a34a?style=for-the-badge" alt="05 Extend"><br><strong>✍️ التوسعة</strong></a></td>
+</tr>
+</table>
+
+<sub><strong>Map the problem → install the library → invoke one skill → compose the path → extend with evidence.</strong></sub>
 
 </div>
 
@@ -74,6 +84,10 @@
 | **الإدارة والتوثيق** | `project-management` · `documentation-comprehensive` | كيف نحافظ على القرار والمعرفة؟ |
 
 ## دورة التشغيل
+
+<img src="./assets/agent-journey-premium.svg" alt="Kaido Agent Skills execution journey from task framing to verification" width="100%">
+
+هذه هي الرحلة العملية داخل المكتبة: لا يبدأ الوكيل من اسم أداة، بل من تعريف المهمة، ثم يختار المجال، ينفذ مسؤولية قابلة للفحص، يركب المهارات عند الحاجة، وينهي بدليل تحقق واضح.
 
 ```text
 مهمة مبهمة
@@ -339,6 +353,28 @@ Return evidence, changed files, and remaining risks.
 
 </div>
 
+## التحقق الآلي
+
+المكتبة لا تعتمد على شكل الملفات فقط؛ يوجد مدقق مستقل يراجع المهارات وعقودها والمراجع المشار إليها قبل اعتمادها.
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/19%2F19-domains%20checked-16a34a?style=for-the-badge" alt="19 of 19 domains checked">
+<img src="https://img.shields.io/badge/0-errors-0f766e?style=for-the-badge" alt="0 errors">
+<img src="https://img.shields.io/badge/0-warnings-2563eb?style=for-the-badge" alt="0 warnings">
+
+</div>
+
+```bash
+python3 tools/validate_skills.py
+```
+
+المخرج المتوقع:
+
+```text
+RESULT: PASS — 0 errors, 0 warning(s)
+```
+
 ## بوابات الجودة قبل التسليم
 
 استخدم هذه القائمة بعد أي مهارة أو سلسلة مهارات. الهدف ليس زيادة الإجراءات؛ الهدف منع نتيجة تبدو مكتملة وهي غير قابلة للاعتماد.
@@ -392,8 +428,9 @@ Return evidence, changed files, and remaining risks.
 - ✅ استدعاء موحد بصيغة `$<skill-name>`.
 - ✅ وصفات جاهزة لسيناريوهات شائعة.
 - ✅ خريطة بصرية للمجالات وطريقة دمج المهارات.
+- ✅ مدقق آلي للمكتبة: 19/19 مجالًا، 0 أخطاء، 0 تحذيرات.
 - 🔄 إضافة أمثلة تشغيلية أعمق لكل مجال حسب الاستخدام الفعلي.
-- 🔄 تحسين التحقق الآلي والاختبارات الخاصة بالمكتبة.
+- 🔄 توسيع التحقق إلى اختبارات سلوكية للمخرجات عند توفر أمثلة تشغيلية.
 
 ## الترخيص
 
