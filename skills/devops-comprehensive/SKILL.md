@@ -243,15 +243,16 @@ git push origin main  # triggers redeploy
 
 ### 6.2 Alert Rules
 ```yaml
-# Alert severity levels
+# Alert severity levels (canonical — mirrored in project-management P0/P1/P2)
 P0 (Page immediately):
   - Error rate > 5% for 5 minutes
+  - Latency p99 > 5s
   - Service down (health check fail)
   - Data loss detected
 
 P1 (Page during work hours):
   - Error rate > 1% for 15 minutes
-  - Latency p95 > 2s for 10 minutes
+  - Latency p95 > 1s for 10 minutes
 
 P2 (Create ticket):
   - Error rate > 0.1% for 1 hour
