@@ -4,32 +4,44 @@
 
 <br><br>
 
-<a href="https://github.com/Dev-KAIDO/agent-skills"><img src="https://img.shields.io/badge/Repository-Dev--KAIDO%2Fagent--skills-0f766e?style=for-the-badge&logo=github&logoColor=white" alt="Repository"></a>
+<a href="https://github.com/Dev-KAIDO/agent-skills"><img src="https://img.shields.io/badge/Repository-agent--skills-0f766e?style=for-the-badge&logo=github&logoColor=white" alt="Repository"></a>
 <a href="https://opencode.ai"><img src="https://img.shields.io/badge/Designed%20for-opencode-f59e0b?style=for-the-badge" alt="Designed for opencode"></a>
-<a href="#خريطة-المكتبة"><img src="https://img.shields.io/badge/19%20domains-map-2563eb?style=for-the-badge" alt="19 domains"></a>
-<a href="#وصفة-تنفيذ"><img src="https://img.shields.io/badge/Composable-workflows-7c3aed?style=for-the-badge" alt="Composable workflows"></a>
+<a href="#لوحة-توجيه-المهارات"><img src="https://img.shields.io/badge/19-callable%20skills-2563eb?style=for-the-badge" alt="19 callable skills"></a>
+<a href="#التحقق"><img src="https://img.shields.io/badge/0-errors%20%7C%200%20warnings-16a34a?style=for-the-badge" alt="0 errors and 0 warnings"></a>
 
 # Kaido Agent Skills
 
-### نظام تشغيل صغير للمهارات — وليس مجلد prompts عشوائيًا
+### لوحة توجيه عملية للوكلاء — اختر المسؤولية، ركّب المسار، وأثبت النتيجة
+
+<p><strong>مكتبة مهارات منظمة تساعد الوكيل على الانتقال من مهمة غير واضحة إلى تنفيذ قابل للمراجعة والتسليم.</strong></p>
 
 </div>
 
-> **19 مهارة قابلة للاستدعاء → 19 مجالًا عمليًا → سلاسل تنفيذ قابلة لإعادة الاستخدام**
+---
 
-هذه المكتبة تجمع المهارات التي يحتاجها الوكيل أثناء العمل الحقيقي: يفهم المهمة، يختار المسار، يقرأ عقد المهارة، ينفذ مسؤولية محددة، ثم يتحقق من النتيجة قبل الانتقال للخطوة التالية.
+## ما هذه المكتبة؟
 
-### أرقام مؤكدة من المستودع
+`agent-skills` ليست مجلد prompts عشوائيًا، وليست مجموعة أوامر جاهزة للاستخدام بلا سياق. هي **نظام توجيه وتشغيل** يتكون من مهارات قابلة للاستدعاء، ومراجع تفصيلية، وسكربتات مساعدة، وقواعد تحقق.
 
-| المؤشر | القيمة | ماذا يعني؟ |
+كل مهارة لها مسؤولية واضحة:
+
+1. تحدد متى تُستخدم ومتى لا تُستخدم.
+2. تقرأ السياق والمراجع الضرورية قبل التنفيذ.
+3. تتبع منهجية قابلة للتطبيق.
+4. تنتج مخرجًا يمكن فحصه.
+5. تسلّم أدلة ومخاطر وخطوة تالية عند الحاجة.
+
+## الأرقام المؤكدة
+
+| المؤشر | القيمة | المعنى |
 | --- | ---: | --- |
-| ملفات `SKILL.md` القابلة للاستدعاء | **19** | مهارات المجال التي يستدعيها الوكيل بصيغة `$name` |
+| ملفات `SKILL.md` القابلة للاستدعاء | **19** | المهارات الرئيسية التي يستدعيها الوكيل بصيغة `$name` |
 | المجالات العملية | **19** | كل مجال يملك عقدًا ومنهجية ومخرجات تحقق |
-| الملفات المتتبعة في Git | **1,189** | المحتوى والسكربتات والمراجع والتوثيق |
+| الملفات المتتبعة في Git | **1,189** | المهارات والمراجع والسكربتات والتوثيق |
 | ملفات المراجع | **1,025** | معرفة تفصيلية تُقرأ عند الحاجة |
-| نتيجة المدقق الحالي | **0 أخطاء · 0 تحذيرات** | آخر فحص لـ19 مهارة |
+| نتيجة المدقق | **0 أخطاء · 0 تحذيرات** | آخر تحقق آلي للمكتبة |
 
-> توجد أرقام تاريخية في تقارير التجميع القديمة تصف مصادر سابقة قبل الدمج؛ لا نستخدمها كعدد للمهارات الحالية القابلة للاستدعاء.
+> الأرقام التاريخية في تقارير التجميع تصف مصادر سابقة قبل الدمج، وليست عدد المهارات الحالية القابلة للاستدعاء.
 
 ## الوصول السريع
 
@@ -37,115 +49,96 @@
 
 <table>
 <tr>
-<td align="center"><a href="#خريطة-المكتبة"><img src="https://img.shields.io/badge/01-Map-2563eb?style=for-the-badge" alt="01 Map"><br><strong>🗺️ الخريطة</strong></a></td>
+<td align="center"><a href="#لوحة-توجيه-المهارات"><img src="https://img.shields.io/badge/01-Route-2563eb?style=for-the-badge" alt="01 Route"><br><strong>🧭 التوجيه</strong></a></td>
 <td align="center">➜</td>
 <td align="center"><a href="#التثبيت"><img src="https://img.shields.io/badge/02-Install-0f766e?style=for-the-badge" alt="02 Install"><br><strong>⚙️ التثبيت</strong></a></td>
 <td align="center">➜</td>
-<td align="center"><a href="#الاستدعاء-الأساسي"><img src="https://img.shields.io/badge/03-Invoke-7c3aed?style=for-the-badge" alt="03 Invoke"><br><strong>▶️ الاستدعاء</strong></a></td>
+<td align="center"><a href="#الاستدعاء"><img src="https://img.shields.io/badge/03-Invoke-7c3aed?style=for-the-badge" alt="03 Invoke"><br><strong>▶️ الاستدعاء</strong></a></td>
 <td align="center">➜</td>
-<td align="center"><a href="#وصفة-تنفيذ-كيف-تندمج-المهارات"><img src="https://img.shields.io/badge/04-Compose-d97706?style=for-the-badge" alt="04 Compose"><br><strong>🔗 الدمج</strong></a></td>
+<td align="center"><a href="#وصفات-جاهزة"><img src="https://img.shields.io/badge/04-Compose-d97706?style=for-the-badge" alt="04 Compose"><br><strong>🔗 التركيب</strong></a></td>
 <td align="center">➜</td>
-<td align="center"><a href="#المساهمة-بمهارة-جديدة"><img src="https://img.shields.io/badge/05-Extend-16a34a?style=for-the-badge" alt="05 Extend"><br><strong>✍️ التوسعة</strong></a></td>
+<td align="center"><a href="#التحقق"><img src="https://img.shields.io/badge/05-Prove-16a34a?style=for-the-badge" alt="05 Prove"><br><strong>✅ الإثبات</strong></a></td>
 </tr>
 </table>
 
-<sub><strong>Map the problem → install the library → invoke one skill → compose the path → extend with evidence.</strong></sub>
+<sub><strong>Route the outcome → install the library → invoke the owner → compose only when needed → prove the handoff.</strong></sub>
 
 </div>
 
-### في دقيقة واحدة
+## لوحة توجيه المهارات
 
-| إذا كنت تريد... | ابدأ من... | ثم تحقق عبر... |
-| --- | --- | --- |
-| تجربة أو واجهة أفضل | `design-web` أو `design-mobile` | `testing-comprehensive` |
-| كود أكثر قابلية للصيانة | `code-engineering` | اختبارات الوحدة والمراجعة |
-| API أو خدمة خلفية | `backend-comprehensive` | `security-comprehensive` ثم `testing-comprehensive` |
-| إطلاقًا مستقرًا | `devops-comprehensive` | `deployment-comprehensive` |
-| فهم عطل غامض | `repair-stability` | إعادة الإنتاج ثم اختبار منع الرجوع |
+ابدأ من **النتيجة التي تريدها**، لا من اسم الأداة التي تعرفها. اللوحة التالية تلخص طريقة الاختيار:
 
-> **قاعدة المكتبة:** اختر أقل عدد من المهارات الذي يغطي المخاطر الحقيقية للمهمة، ثم اجعل كل مهارة مسؤولة عن نتيجة قابلة للفحص.
+<img src="./assets/skills-routing-board.svg" alt="Skill Routing Board: outcome, primary skill, supporting path, and proof of done" width="100%">
 
-## كيف تفكر في المشروع؟
+### كيف تستخدم اللوحة؟
 
-المهارة ليست إجابة جاهزة، وليست أمرًا سحريًا. اعتبرها **وحدة تشغيل صغيرة** لها أربعة أجزاء:
+| السؤال | القرار |
+| --- | --- |
+| ما الذي يجب أن يكون صحيحًا في النهاية؟ | صِغ النتيجة والقيود، ولا تبدأ باسم مهارة |
+| من يملك القرار الرئيسي؟ | اختر مهارة واحدة مالكة للمسار |
+| ما الفجوة المتبقية؟ | أضف مهارة مساندة فقط إذا أغلقت خطرًا حقيقيًا |
+| كيف نعرف أن العمل انتهى؟ | حدّد اختبارًا أو تشغيلًا قابلًا للإعادة وأدلة تسليم |
 
-1. **متى تُستخدم؟** — نطاق واضح يمنع اختيار المهارة الخطأ.
-2. **ماذا تقرأ؟** — ملفات ومراجع وسياق تحتاجه قبل التنفيذ.
-3. **كيف تعمل؟** — منهجية وخطوات ومعايير قرار.
-4. **كيف تتحقق؟** — فحوصات ومخرجات تمنع إعلان النجاح مبكرًا.
+> **قاعدة التوجيه:** مهارة رئيسية واحدة واضحة أفضل من سلسلة طويلة لا يملك أحد مسؤوليتها.
 
-<img src="./assets/skill-contract.svg" alt="The five-part contract of a Kaido skill" width="100%">
+### بوابة اختيار سريعة
 
+| إذا كنت تريد... | ابدأ بـ | أضف عند الحاجة | دليل النهاية |
+| --- | --- | --- | --- |
+| تصميم واجهة ويب | `design-web` | `code-engineering` → `testing-comprehensive` | معاينة، حالات تفاعل، وفحص استجابة |
+| بناء تطبيق جوال | `design-mobile` | `mobile-development` → `testing-comprehensive` | تدفقات شاشة وتشغيل على المنصة المستهدفة |
+| إنشاء API أو خدمة خلفية | `backend-comprehensive` | `database-comprehensive` → `security-comprehensive` | عقد API، اختبارات، ومراجعة مخاطر |
+| إصلاح عطل غامض | `repair-stability` | `code-engineering` → `testing-comprehensive` | إعادة إنتاج، سبب جذري، واختبار منع الرجوع |
+| مراجعة أمان | `security-comprehensive` | `testing-comprehensive` | نتائج قابلة لإعادة الإنتاج وخطة معالجة |
+| إطلاق مشروع | `devops-comprehensive` | `deployment-comprehensive` | سجل نشر، health check، وخطة رجوع |
+| تنظيم عمل وكيل | `agent-workflows` | `project-management` → `documentation-comprehensive` | مراحل، handoff، وحالة قابلة للتتبع |
+| توثيق قرار أو نظام | `documentation-comprehensive` | `project-management` | مستند مفهوم ومصادر وقرارات معلنة |
+
+## خريطة المجالات
 
 <img src="./assets/skills-map.svg" alt="Map of the 19 Kaido skill domains" width="100%">
-
-## خريطة المكتبة
-
-المكتبة مقسمة إلى عائلات. لا تحتاج إلى حفظ كل الأسماء؛ ابدأ من المجال الذي يصف مشكلتك ثم كوّن سلسلة صغيرة:
 
 | العائلة | المهارات | السؤال الذي تجيب عنه |
 | --- | --- | --- |
 | **التصميم** | `design-web` · `design-mobile` · `design-desktop` · `design-figma` | كيف يجب أن تبدو التجربة وتعمل؟ |
 | **الهندسة** | `code-engineering` · `backend-comprehensive` · `database-comprehensive` | كيف نبني أساسًا صحيحًا وقابلًا للصيانة؟ |
-| **الجودة** | `testing-comprehensive` · `security-comprehensive` | كيف نثبت أن الحل يعمل وآمن؟ |
+| **الجودة والأمان** | `testing-comprehensive` · `security-comprehensive` | كيف نثبت أن الحل يعمل وآمن؟ |
 | **التسليم** | `devops-comprehensive` · `deployment-comprehensive` | كيف يصل المنتج إلى المستخدم بثبات؟ |
-| **الإصلاح** | `repair-stability` | كيف نفهم العطل ونصلح السبب لا العرض؟ |
-| **البيانات والتكامل** | `database-comprehensive` · `integrations` | كيف ننظم البيانات ونربط الأنظمة؟ |
+| **الإصلاح** | `repair-stability` | كيف نعالج السبب لا العرض؟ |
+| **التكامل والبيانات** | `integrations` · `database-comprehensive` | كيف ننظم البيانات ونربط الأنظمة؟ |
 | **الجوال والوسائط** | `mobile-development` · `multimedia-content` | كيف نبني تطبيقًا أو محتوى متعدد الوسائط؟ |
-| **الوكيل والعمليات** | `agent-workflows` · `cityofaiagents-operations` | كيف ننظم العمل المتعدد الخطوات؟ |
+| **الوكيل والعمليات** | `agent-workflows` · `cityofaiagents-operations` | كيف ننظم العمل متعدد الخطوات؟ |
 | **الإدارة والتوثيق** | `project-management` · `documentation-comprehensive` | كيف نحافظ على القرار والمعرفة؟ |
 
-## خريطة التشغيل
+## عقد المهارة
 
-<img src="./assets/agent-workflow-map.svg" alt="Kaido Agent Skills workflow from framing to verification" width="100%">
+المهارة هي وحدة تشغيل صغيرة لها حدود ومخرج، وليست إجابة عامة.
 
-هذه ليست دورة غامضة؛ إنها خريطة تسليم من اليسار إلى اليمين: عرّف المطلوب، اختر مالك القرار، نفّذ، مرّر الأدلة، ثم تحقّق قبل التسليم.
+<img src="./assets/skill-contract.svg" alt="The five-part contract of a Kaido skill" width="100%">
 
-```text
-مهمة مبهمة
-   ↓
-تحديد المجال والقيود
-   ↓
-اختيار مهارة أو سلسلة
-   ↓
-قراءة SKILL.md والمراجع
-   ↓
-تنفيذ مسؤولية واحدة
-   ↓
-اختبار ومراجعة المخرجات
-   ↓
-الانتقال للمهارة التالية أو تسليم النتيجة
-```
+يجب أن يوضح كل `SKILL.md` على الأقل:
 
-<details>
-<summary><strong>قاعدة اختيار المهارة</strong></summary>
-<br>
-
-لا تبدأ من الأداة التي تحبها؛ ابدأ من الخطر أو النتيجة التي تريدها:
-
-- تريد تجربة أفضل؟ ابدأ بـ `design-*`.
-- تريد كودًا أنظف؟ استخدم `code-engineering`.
-- تريد خدمة أو API؟ استخدم `backend-comprehensive`.
-- تريد بيانات منظمة؟ استخدم `database-comprehensive`.
-- تريد اكتشاف الأخطاء؟ استخدم `testing-comprehensive`.
-- تريد تقليل المخاطر؟ استخدم `security-comprehensive`.
-- تريد فهم عطل غامض؟ استخدم `repair-stability`.
-- تريد إطلاق ما بنيته؟ استخدم `deployment-comprehensive`.
-- تريد تنسيق وكيل أو مراحل متعددة؟ استخدم `agent-workflows`.
-
-</details>
+| الجزء | وظيفته |
+| --- | --- |
+| `name` | الاسم الذي يستدعى بصيغة `$name` |
+| `description` | متى تستخدم المهارة وما الإشارة التي تستدعيها |
+| **Scope** | ما تغطيه المهارة وما لا تغطيه |
+| **Workflow** | خطوات العمل بالترتيب |
+| **Verification** | كيف نراجع النتيجة قبل التسليم |
+| **References** | أين توجد المعرفة الأعمق |
 
 ## التثبيت
 
-### 1. النسخ
+### 1. نسخ المستودع
 
 ```bash
 git clone https://github.com/Dev-KAIDO/agent-skills.git
 ```
 
-### 2. مسار دائم
+### 2. وضع مسار دائم
 
-انسخ أو اربط مجلد `skills/` في مكان لا يختفي بحذف مشروعك:
+ضع مجلد `skills/` في مسار لا يختفي بحذف مشروعك:
 
 ```text
 ~/.kaido-skills/skills/
@@ -181,59 +174,37 @@ C:\Users\<user>\.kaido-skills\skills\
 
 بعدها تصبح المهارات متاحة من أي مشروع عبر `$<skill-name>`.
 
-## الاستدعاء الأساسي
+## الاستدعاء
 
-```text
-$design-web build a clear landing page for a coffee brand
-$backend-comprehensive design a REST API with rate limiting
-$security-comprehensive review this pull request for OWASP risks
-$testing-comprehensive add end-to-end tests for the checkout flow
-```
-
-صيغة الاستدعاء:
+الصيغة الأساسية:
 
 ```text
 $<skill-name> <task and constraints>
 ```
 
-أمثلة أسماء صحيحة:
+أمثلة:
 
 ```text
-$agent-workflows
-$documentation-comprehensive
-$cityofaiagents-operations
+$design-web build a responsive landing page for a coffee brand
+$backend-comprehensive design a REST API with rate limiting
+$security-comprehensive review this pull request for OWASP risks
+$testing-comprehensive add end-to-end tests for the checkout flow
 ```
 
-## وصفة تنفيذ: كيف تندمج المهارات؟
+### صيغة استدعاء أفضل
 
-المهارات لا تتنافس على المهمة؛ كل واحدة تملك جزءًا من المسؤولية. مثال بناء منتج ويب جاهز للنشر:
-
-<img src="./assets/composition-flow.svg" alt="Composing skills into a production workflow" width="100%">
+لا تكتفِ باسم المهارة؛ أعطها النتيجة والقيود ودليل النجاح المتوقع:
 
 ```text
-$design-web
-  → $code-engineering
-  → $backend-comprehensive
-  → $database-comprehensive
-  → $security-comprehensive
-  → $testing-comprehensive
-  → $deployment-comprehensive
+$repair-stability
+Reproduce the checkout failure, identify the root cause,
+make the smallest safe fix, and add a regression test.
+Return changed files, evidence, remaining risks, and next step.
 ```
-
-### متى نستخدم سلسلة؟
-
-استخدم سلسلة عندما تكون النتيجة النهائية تعتمد على أكثر من نوع من الحكم:
-
-- الواجهة وحدها لا تكفي دون هندسة.
-- الكود لا يكفي دون اختبار.
-- الاختبار لا يكفي دون أمان.
-- المنتج لا يكتمل دون نشر وتوثيق.
 
 ## وصفات جاهزة
 
-<details>
-<summary><strong>وصفة 01 — واجهة ويب من الفكرة إلى التحقق</strong></summary>
-<br>
+### وصفة 01 — واجهة من الفكرة إلى التحقق
 
 ```text
 $design-web
@@ -241,13 +212,9 @@ $design-web
 → $testing-comprehensive
 ```
 
-**المخرجات المتوقعة:** تصور واضح، تنفيذ منظم، ثم تحقق من السلوك والاستجابة.
+**المخرجات:** تصور واضح، تنفيذ منظم، ثم تحقق من السلوك والاستجابة.
 
-</details>
-
-<details>
-<summary><strong>وصفة 02 — API آمن وقابل للنشر</strong></summary>
-<br>
+### وصفة 02 — API آمن وقابل للنشر
 
 ```text
 $backend-comprehensive
@@ -257,13 +224,9 @@ $backend-comprehensive
 → $deployment-comprehensive
 ```
 
-**المخرجات المتوقعة:** عقد API، نموذج بيانات، مراجعة مخاطر، اختبارات، وخطة تسليم.
+**المخرجات:** عقد API، نموذج بيانات، مراجعة مخاطر، اختبارات، وخطة تسليم.
 
-</details>
-
-<details>
-<summary><strong>وصفة 03 — إصلاح عطل غير واضح</strong></summary>
-<br>
+### وصفة 03 — إصلاح عطل غير واضح
 
 ```text
 $repair-stability
@@ -271,13 +234,9 @@ $repair-stability
 → $testing-comprehensive
 ```
 
-**المخرجات المتوقعة:** إعادة إنتاج، سبب جذري، إصلاح محدود، واختبار يمنع عودة المشكلة.
+**المخرجات:** إعادة إنتاج، سبب جذري، إصلاح محدود، واختبار يمنع عودة المشكلة.
 
-</details>
-
-<details>
-<summary><strong>وصفة 04 — مشروع جوال</strong></summary>
-<br>
+### وصفة 04 — مشروع جوال
 
 ```text
 $design-mobile
@@ -286,96 +245,69 @@ $design-mobile
 → $deployment-comprehensive
 ```
 
-**المخرجات المتوقعة:** تدفق شاشات، تنفيذ Expo / React Native، تحقق، وجاهزية للإصدار.
+**المخرجات:** تدفق شاشات، تنفيذ Expo أو React Native، تحقق، وجاهزية للإصدار.
 
-</details>
+### وصفة 05 — نظام وكيل قابل للتتبع
+
+```text
+$agent-workflows
+→ $project-management
+→ $documentation-comprehensive
+→ $testing-comprehensive
+```
+
+**المخرجات:** مراحل واضحة، نقاط handoff، سجل قرارات، ومعايير تحقق.
+
+<img src="./assets/composition-flow.svg" alt="Composing skills into a production workflow" width="100%">
 
 ## ما داخل المهارة؟
 
 ```text
 skills/<skill-name>/
-├── SKILL.md          # الاسم، الوصف، متى تستخدم، والمنهجية
+├── SKILL.md          # العقد، النطاق، المنهجية، والتحقق
 ├── scripts/          # أدوات قابلة للتشغيل عند الحاجة
 └── references/       # معرفة تفصيلية لا تُحمّل إلا عند الحاجة
 ```
 
-وكل `SKILL.md` يجب أن يوضح على الأقل:
-
-| الجزء | وظيفته |
-| --- | --- |
-| `name` | الاسم الذي تستدعيه بصيغة `$name` |
-| `description` | الإشارة التي تخبر الوكيل متى يستخدم المهارة |
-| **Scope** | ما الذي تغطيه المهارة وما الذي لا تغطيه |
-| **Workflow** | خطوات العمل بالترتيب |
-| **Verification** | كيف نراجع النتيجة قبل تسليمها |
-| **References** | أين يجد الوكيل المعرفة الأعمق |
-
-<details>
-<summary><strong>قالب مهارة مبسط</strong></summary>
-<br>
-
-```markdown
----
-name: example-skill
-description: Use when the task needs ...
----
-
-# Example Skill
-
-## Use when
-...
-
-## Workflow
-1. Inspect the context.
-2. Choose the smallest safe change.
-3. Execute the work.
-4. Verify the result.
-
-## Output
-Return evidence, changed files, and remaining risks.
-```
-
-</details>
+التصميم المقصود هو أن يبقى `SKILL.md` موجزًا وقابلًا للتوجيه، بينما تُحفظ التفاصيل الثقيلة في `references/` ولا تُقرأ إلا عندما يتطلبها السياق.
 
 ## فهرس المهارات الـ19
 
-<div dir="ltr">
-
-| # | Skill | Domain |
+| # | Skill | مجال المسؤولية |
 |---:|---|---|
-| 01 | `design-web` | Web interface design |
-| 02 | `design-mobile` | iOS / Android experience design |
-| 03 | `design-desktop` | Desktop application design |
-| 04 | `design-figma` | Figma workflows and handoff |
-| 05 | `code-engineering` | Code quality and architecture |
-| 06 | `backend-comprehensive` | APIs and backend systems |
-| 07 | `database-comprehensive` | Data modeling and queries |
-| 08 | `mobile-development` | Expo and React Native |
-| 09 | `multimedia-content` | Creative media workflows |
-| 10 | `testing-comprehensive` | Testing and verification |
-| 11 | `security-comprehensive` | Security and OWASP review |
-| 12 | `repair-stability` | Debugging and stability |
-| 13 | `devops-comprehensive` | Infrastructure and CI/CD |
-| 14 | `deployment-comprehensive` | Release and delivery |
-| 15 | `integrations` | External service integrations |
-| 16 | `project-management` | Scope, priorities, and planning |
-| 17 | `agent-workflows` | Agent orchestration |
-| 18 | `documentation-comprehensive` | Documentation and decisions |
-| 19 | `cityofaiagents-operations` | CityOfAIAgents operations |
+| 01 | `design-web` | تصميم واجهات الويب |
+| 02 | `design-mobile` | تصميم تجارب iOS وAndroid |
+| 03 | `design-desktop` | تصميم تطبيقات سطح المكتب |
+| 04 | `design-figma` | Figma والتسليم التصميمي |
+| 05 | `code-engineering` | جودة الكود والمعمارية |
+| 06 | `backend-comprehensive` | APIs والأنظمة الخلفية |
+| 07 | `database-comprehensive` | نمذجة البيانات والاستعلامات |
+| 08 | `mobile-development` | Expo وReact Native |
+| 09 | `multimedia-content` | إنتاج المحتوى والوسائط |
+| 10 | `testing-comprehensive` | الاختبار والتحقق |
+| 11 | `security-comprehensive` | الأمن ومراجعة OWASP |
+| 12 | `repair-stability` | التصحيح والاستقرار |
+| 13 | `devops-comprehensive` | البنية وCI/CD |
+| 14 | `deployment-comprehensive` | الإصدار والتسليم |
+| 15 | `integrations` | التكامل مع الخدمات الخارجية |
+| 16 | `project-management` | النطاق والأولويات والتخطيط |
+| 17 | `agent-workflows` | تنسيق الوكلاء وسلاسل العمل |
+| 18 | `documentation-comprehensive` | التوثيق والقرارات |
+| 19 | `cityofaiagents-operations` | عمليات CityOfAIAgents |
 
-</div>
+## التحقق
 
-## التحقق الآلي
-
-المكتبة لا تعتمد على شكل الملفات فقط؛ يوجد مدقق مستقل يراجع المهارات وعقودها والمراجع المشار إليها قبل اعتمادها.
+لا يكفي أن يبدو المستودع مرتبًا؛ يجب أن تكون العقود والمراجع والملفات قابلة للفحص.
 
 <div align="center">
 
-<img src="https://img.shields.io/badge/19%2F19-domains%20checked-16a34a?style=for-the-badge" alt="19 of 19 domains checked">
+<img src="https://img.shields.io/badge/19%2F19-skills%20checked-16a34a?style=for-the-badge" alt="19 of 19 skills checked">
 <img src="https://img.shields.io/badge/0-errors-0f766e?style=for-the-badge" alt="0 errors">
 <img src="https://img.shields.io/badge/0-warnings-2563eb?style=for-the-badge" alt="0 warnings">
 
 </div>
+
+شغّل المدقق من جذر المستودع:
 
 ```bash
 python3 tools/validate_skills.py
@@ -384,75 +316,75 @@ python3 tools/validate_skills.py
 المخرج المتوقع:
 
 ```text
+============================================================
+Kaido skills validation — 19 skills checked
+============================================================
 RESULT: PASS — 0 errors, 0 warning(s)
 ```
 
 ## بوابات الجودة قبل التسليم
 
-استخدم هذه القائمة بعد أي مهارة أو سلسلة مهارات. الهدف ليس زيادة الإجراءات؛ الهدف منع نتيجة تبدو مكتملة وهي غير قابلة للاعتماد.
-
 | البوابة | سؤال المراجعة | دليل مقبول |
 | --- | --- | --- |
 | **الفهم** | هل فُهمت المهمة والقيود؟ | ملخص نطاق واضح وافتراضات معلنة |
+| **التوجيه** | هل اختيرت المهارة المالكة فعلًا؟ | سبب اختيار ومسؤولية واحدة واضحة |
 | **النطاق** | هل عُدّلت الملفات الضرورية فقط؟ | diff صغير ومفهوم |
 | **السلوك** | هل تعمل النتيجة في المسار الأساسي؟ | اختبار أو تشغيل قابل لإعادة الإنتاج |
-| **المخاطر** | هل راجعنا الأمن والتراجع والحالات الطرفية؟ | قائمة مخاطر وخطوات متابعة |
-| **التسليم** | هل يستطيع شخص آخر فهم ما حدث؟ | توثيق، مخرجات، وروابط أو أدلة |
+| **المخاطر** | هل راجعنا الأمن والحالات الطرفية والتراجع؟ | قائمة مخاطر وخطوات متابعة |
+| **التسليم** | هل يستطيع شخص آخر فهم ما حدث؟ | ملفات، أدلة، روابط، وخطوة تالية |
 
-## قواعد الجودة
-
-- لا تستخدم مهارة لا يطابق وصفها المهمة.
-- لا تعتبر وجود commit أو خروج نص من الوكيل دليلًا على نجاح العمل.
-- افصل بين التنفيذ والمراجعة عندما تكون المخاطر عالية.
-- اجعل المخرجات قابلة للفحص: ملفات، اختبارات، أدلة، أو روابط.
-- لا تخفِ عدم اليقين؛ سجله كخطر أو خطوة متابعة.
-- بعد كل سلسلة، راجع هل ما زالت المهارة التالية ضرورية أم أن النتيجة اكتملت.
+> لا يوجد ادعاء اكتمال بلا دليل تشغيل أو تحقق مناسب للسياق.
 
 ## المساهمة بمهارة جديدة
 
-إذا واجهت نمطًا يتكرر في أكثر من مشروع، لا تضف تعليمات متناثرة؛ حوّله إلى مهارة مستقلة.
+أضف مهارة جديدة فقط عندما يظهر نمط متكرر ومستقل لا تغطيه المهارات الحالية. لا تضف مهارة لمجرد زيادة العدد.
 
 ### خطوات المساهمة
 
-1. سمِّ المهارة باسم قصير يصف المجال لا الأداة.
-2. اكتب `description` يوضح **متى** تُستخدم ومتى لا تُستخدم.
-3. افصل المنهجية عن المراجع الطويلة داخل `references/`.
-4. ضع السكربتات القابلة للتكرار داخل `scripts/`.
-5. أضف مخرجًا واضحًا ومعيار تحقق.
-6. جرّبها على مهمة حقيقية قبل دمجها في المكتبة.
+1. سمِّ المهارة باسم يصف المجال لا الأداة.
+2. اكتب `description` يوضح متى تستخدم ومتى لا تستخدم.
+3. حدّد المالك والنطاق والحدود.
+4. افصل المنهجية عن المراجع الطويلة داخل `references/`.
+5. ضع السكربتات القابلة للتكرار داخل `scripts/`.
+6. أضف مخرجًا واضحًا ومعيار تحقق.
+7. شغّل المدقق وجرّب المهارة على مهمة حقيقية قبل دمجها.
 
-### فحص سريع قبل الإضافة
+### فحص قبل الإضافة
 
 ```text
 [ ] الاسم فريد وقابل للاستدعاء بصيغة $skill-name
 [ ] الوصف يطابق حالات الاستخدام الفعلية
+[ ] المهارة لا تكرر مسؤولية موجودة
 [ ] النطاق والحدود واضحان
 [ ] الخطوات قابلة للتطبيق وليست شعارات عامة
 [ ] المخرجات ومعايير التحقق محددة
 [ ] لا توجد معلومات سرية أو مسارات خاصة بالجهاز
+[ ] python3 tools/validate_skills.py يمر بلا أخطاء
 ```
-
-للتفاصيل، استخدم القالب الموجود في قسم **ما داخل المهارة؟** ثم أضف المهارة إلى الفهرس إذا أصبحت جاهزة للاستخدام.
 
 ## الحالة الحالية
 
 - ✅ 19 مهارة قابلة للاستدعاء منظمة داخل 19 مجالًا.
-- ✅ استدعاء موحد بصيغة `$<skill-name>`.
+- ✅ لوحة توجيه لاختيار المهارة المالكة والمسار المساند.
 - ✅ وصفات جاهزة لسيناريوهات شائعة.
-- ✅ خريطة بصرية للمجالات وطريقة دمج المهارات.
-- ✅ مدقق آلي للمكتبة: 19/19 مجالًا، 0 أخطاء، 0 تحذيرات.
+- ✅ عقود مهارات ومراجع وسكربتات منظمة.
+- ✅ مدقق آلي: 19/19، و0 أخطاء، و0 تحذيرات.
 - 🔄 إضافة أمثلة تشغيلية أعمق لكل مجال حسب الاستخدام الفعلي.
 - 🔄 توسيع التحقق إلى اختبارات سلوكية للمخرجات عند توفر أمثلة تشغيلية.
 
-## الترخيص
+## المصادر والإسناد
 
-انسخ وعدّل وشارك المكتبة في مشاريعك الشخصية والتجارية. راجع كل مهارة قبل استخدامها في بيئة إنتاجية، وتأكد من أن المراجع والأوامر مناسبة لسياقك.
+توجد تفاصيل المصادر المدمجة وإشعارات التراخيص في [`CREDITS.md`](CREDITS.md). راجعها قبل إعادة توزيع المحتوى المدمج في مشروع آخر.
+
+## الترخيص والاستخدام
+
+استخدم المكتبة بعد مراجعة المهارة والمراجع والأوامر بما يناسب سياقك. لا تعتبر وجود مهارة أو نجاح المدقق ضمانًا تلقائيًا لصحة كل قرار إنتاجي؛ تبقى مسؤولية التحقق النهائي على منفذ المهمة.
 
 ---
 
 <div align="center">
 
-**Choose clearly · Compose deliberately · Verify everything**
+**Route clearly · Compose deliberately · Prove the result**
 
 <a href="https://github.com/Dev-KAIDO"><img src="https://img.shields.io/badge/Maintained%20by-Eng_Abdulrhaman-0f766e?style=flat-square&logo=github&logoColor=white" alt="Maintained by Eng Abdulrhaman"></a>
 
