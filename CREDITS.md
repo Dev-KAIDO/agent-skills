@@ -30,6 +30,17 @@
 
 ---
 
+## usestrix/strix (GitHub) — اختبار الاختراق بالذكاء الاصطناعي
+
+| Source repository | Skills absorbed | Absorbed into | License |
+|---|---|---|---|
+| [`usestrix/strix`](https://github.com/usestrix/strix) | `penetration-testing-with-strix`, `managed-pentesting-with-strix`, `fix-security-vulnerabilities-with-strix`, `ci-security-scanning-with-strix`, `application-security-testing`, `web-app-penetration-testing`, `api-security-testing`, `owasp-top-10-testing`, `find-security-vulnerabilities-in-code` | `security-comprehensive/references/strix/` (9 files + index) | **Apache-2.0** |
+
+- إشعار الترخيص: `Apache License 2.0` — تُحفظ إشعارات الرخصة وحقوق المؤلف ضمن الملفات المدمجة.
+- أسلوب الدجمة نفسه: محتوى كامل في `references/strix/` + مؤشر في قسم 9.3 من `security-comprehensive/SKILL.md`.
+
+---
+
 ## مصادر محلية (محذوفة → مستعادة)
 
 المهارات الأصلية الـ178 التي دُمجت في الـ19 كانت موجودة في سلة المحذوفات على القرص، واستُعيدت منها المكتبات المشتركة والملفات الناقصة (الإصدار 3.1 من `CONSOLIDATION_PLAN.md`).

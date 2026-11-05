@@ -472,6 +472,20 @@ Low      → Fix when convenient
 False positive → Document and suppress with justification
 ```
 
+### 9.3 AI Penetration Testing — Strix (اختبار اختراق آلي بالذكاء الاصطناعي)
+Autonomous AI pentesting that **exploits and proves** vulnerabilities with PoCs (not just flags them) — for code, URLs, domains, APIs, or OpenAPI specs. From `usestrix/strix` (Apache-2.0).
+
+```bash
+# self-hosted (Docker + BYO LLM key) — headless, always budgeted
+strix -n -t https://staging.example.com --scan-mode standard --max-budget 20
+# CI gate: exit 0 clean · 1 fatal · 2 vulnerabilities found (--fail-on high to threshold)
+```
+
+- **Two modes, same engine:** OSS CLI (local/air-gapped) vs managed cloud (`strix cloud`, no Docker) — mix freely; both emit SARIF 2.1.0
+- Findings land in `strix_runs/<run>/` with `penetration_test_report.md`, per-finding PoCs, and `findings.sarif` for GitHub code scanning
+- **Rules:** scan only authorized targets · a clean exit ≠ full coverage (check `run.json` status + cost vs budget) · then route to `fix-security-vulnerabilities` workflow
+- **Deep references** — load on demand from `references/strix/` (see its `index.md`): `penetration-testing-with-strix.md` (start here) · `managed-pentesting-with-strix.md` · `fix-security-vulnerabilities-with-strix.md` · `ci-security-scanning-with-strix.md` · `application-security-testing.md` · `web-app-penetration-testing.md` · `api-security-testing.md` · `owasp-top-10-testing.md` · `find-security-vulnerabilities-in-code.md`
+
 ---
 
 ## 10. Security Ownership Map (خريطة ملكية الأمان)
